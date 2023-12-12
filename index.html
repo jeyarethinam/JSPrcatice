@@ -1,0 +1,40 @@
+<html>
+
+<head>
+
+    <script>
+        
+        function myFunction() {
+            var numberOne = document.getElementById("numberOne").value;
+            var numberTwo = document.getElementById("numberTwo").value;
+            var calculationType = document.getElementById("calculationType").value;
+            var outputLable = document.getElementById("lblOutput");
+            var output;
+
+            if (calculationType === "+") {
+                output = parseInt(numberOne) + parseInt(numberTwo);
+            } else if (calculationType == "-") {
+                output = parseInt(numberOne) - parseInt(numberTwo);
+            } else if (calculationType == "*" || calculationType == "x" || calculationType == "X") {
+                output = parseInt(numberOne) * parseInt(numberTwo);
+            } else if (calculationType == "/") {
+                output = parseInt(numberOne) / parseInt(numberTwo);
+            } else {
+                output = "Invalid Calculation method";
+            }
+            outputLable.innerText = output;
+            console.log(outputLable);
+        }
+
+    </script>
+</head>
+
+<body>
+    <input type="text" id="numberOne" placeholder="Number One"><br><br>
+    <input type="text" id="numberTwo" placeholder="Number Two"><br><br>
+    <input type="text" id="calculationType" placeholder="Calculation Type "><br><br>
+    <label id="lblOutput"></label><br><br>
+    <button onclick="myFunction()">Click me</button>
+</body>
+
+</html>
