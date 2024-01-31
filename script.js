@@ -339,14 +339,29 @@ do {
 }
 
 
+function isPalindrome() {
+    // Remove non-alphanumeric characters and convert to lowercase
 
-console.log(findLongestPalindrome("bananas")); // Output: "anana"
+    str = "ABABA"; 
+    const cleanedStr = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+//   A!==A 
+//   B!==B
+//   B!==B
+var isTrue = false;
+
+    // Use a loop to compare characters from the beginning and end
+    console.log(Math.floor(cleanedStr.length / 2));
+    for (let i = 0; i <Math.floor(cleanedStr.length / 2) ; i++) {
+      if (cleanedStr[i] !== cleanedStr[cleanedStr.length - 1 - i]) {
+        isTrue= false; // Characters do not match, not a palindrome
+      }
+    }
+    
+    isTrue= true;
+    console.log(isTrue);
+    return isTrue;// All characters match, it's a palindrome
+  }
+  
 
 
-45613144566
-
-
-banana
-
-
-
+  
