@@ -1,3 +1,34 @@
+var todoItems = [];
+
+loadELemrnts();
+
+function loadELemrnts() {
+    var arrayItemsDiv = document.getElementById("arrayItems");
+    arrayItemsDiv.innerHTML = "";
+    if (todoItems.length > 0) {
+        for (var i = 0; i < todoItems.length; i++) {
+            // Create a new paragraph element
+            var paragraph = document.createElement("p");
+
+            // Set the text content of the paragraph to the current array item
+            paragraph.textContent = todoItems[i];
+
+            // Append the paragraph element to the container div
+            arrayItemsDiv.appendChild(paragraph);
+        }
+    }
+}
+
+
+
+function addTodo() {
+    var todo = document.getElementById("todo").value;
+    todoItems.push(todo);
+    console.log(todoItems);
+    loadELemrnts();
+}
+
+
 function myFunction() {
 
     var numberOne = document.getElementById("numberOne").value;
@@ -116,7 +147,7 @@ function discoverParameter() {
 
     var firstName = document.getElementById("firstname").value;
     var lastName = document.getElementById("lastName").value;
-    getFullname(firstName, lastName);
+    var fullname = getFullname(firstName, lastName);
 
 }
 
@@ -124,8 +155,9 @@ function discoverParameter() {
 function getFullname(firstName, lastName) {
 
     var characters = firstName.split(",");
-
+    var fullname = characters[0] + "." + lastName;
     console.log(characters[0] + "." + lastName);
+    return fullname;
 }
 
 
@@ -256,10 +288,65 @@ function findDuplicates() {
     return duplicates;
 }
 
+function findLongestPalindrome(string) {
+    let longest = '';
+
+    for (let i = 0; i < string.length; i++) {
+        // check for even length palindrome
+        let length1 = expandAroundCenter(string, i, i);
+        // check for odd length palindrome
+        let length2 = expandAroundCenter(string, i, i + 1);
+
+        let length = Math.max(length1, length2);
+        if (length > longest.length) {
+            longest = string.substring(i - Math.floor(length / 2), i + Math.ceil(length / 2) + 1);
+        }
+    }
+
+    return longest;
+}
+
+function expandAroundCenter(string, left, right) {
+    while (left >= 0 && right < string.length && string[left] === string[right]) {
+        left--;
+        right++;
+    }
+
+    return right - left - 1;
+}
+
+
+function discoverWhile() {
+
+    let count = 0;
+
+    while (count < 5) {
+        console.log("Count: " + count);
+        count++;
+    }
+
+
+}
+
+function discoverDoWhile(){
+    let count = 0;
+
+do {
+  console.log("Count: " + count);
+  count++;
+} while (count < 5);
+
+}
 
 
 
+console.log(findLongestPalindrome("bananas")); // Output: "anana"
 
+
+45613144566
+
+
+banana
 
 
 
