@@ -328,13 +328,13 @@ function discoverWhile() {
 
 }
 
-function discoverDoWhile(){
+function discoverDoWhile() {
     let count = 0;
 
-do {
-  console.log("Count: " + count);
-  count++;
-} while (count < 5);
+    do {
+        console.log("Count: " + count);
+        count++;
+    } while (count < 5);
 
 }
 
@@ -342,26 +342,69 @@ do {
 function isPalindrome() {
     // Remove non-alphanumeric characters and convert to lowercase
 
-    str = "ABABA"; 
+    str = "ABABA";
     const cleanedStr = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
-//   A!==A 
-//   B!==B
-//   B!==B
-var isTrue = false;
+    //   A!==A 
+    //   B!==B
+    //   B!==B
+    var isTrue = false;
 
     // Use a loop to compare characters from the beginning and end
     console.log(Math.floor(cleanedStr.length / 2));
-    for (let i = 0; i <Math.floor(cleanedStr.length / 2) ; i++) {
-      if (cleanedStr[i] !== cleanedStr[cleanedStr.length - 1 - i]) {
-        isTrue= false; // Characters do not match, not a palindrome
-      }
+    for (let i = 0; i < Math.floor(cleanedStr.length / 2); i++) {
+        if (cleanedStr[i] !== cleanedStr[cleanedStr.length - 1 - i]) {
+            isTrue = false; // Characters do not match, not a palindrome
+        }
     }
-    
-    isTrue= true;
+
+    isTrue = true;
     console.log(isTrue);
     return isTrue;// All characters match, it's a palindrome
-  }
-  
+}
 
 
-  
+
+
+
+
+
+function CalculateSumm() {
+    var calcaa = Mutiplication(10);
+   // console.log(calcaa);
+
+}
+
+
+
+
+function Mutiplication(n) {
+
+    var calc = 0;
+
+    for (let i = n; i > 1; i--) {
+
+        if (i == n) {
+            calc = i * (i - 1);
+            //console.log("Intial " + i + " X " + (i - 1));
+        } else {
+            calc = calc * (i - 1);
+            // console.log(calc + " X " + (i - 1));
+        }
+       
+    };
+    console.log(calc);
+
+     var char = calc.toString();
+     var total = 0;
+
+    for (let index = 0; index < char.length; index++) {
+
+      //  console.log(char[index]);
+        total += parseInt(char[index]);
+       // console.log(total);
+    }
+
+    console.log("Finla Out put is " + total);
+    
+
+}
