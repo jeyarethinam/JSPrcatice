@@ -408,3 +408,29 @@ function Mutiplication(n) {
     
 
 }
+
+function findNumbersNotInSecondArray() {
+    
+    const array1 = [1, 2, 3, 4, 5, 6];
+    const array2 = [2, 3, 1, 0, 5];
+
+    const result = [];
+
+    for (let i = 0; i < array1.length; i++) {
+        let found = false;
+
+        for (let j = 0; j < array2.length; j++) {
+            if (array1[i] === array2[j]) {
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            result.push(array1[i]);
+        }
+    }
+
+    return result;
+}
+
